@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/lucas/Repositories/nids-rule-learner/syrius'
+let g:netrw_dirhist_4='/home/lucas/.config/nvim'
+let g:netrw_dirhist_3='/home/lucas'
+let g:netrw_dirhist_2='/home/lucas/.config/nvim'
+let g:netrw_dirhist_1='/home/lucas/Repositories/nids-rule-learner/syrius'
+let g:netrw_dirhist_0='/home/lucas/Repositories/Coding-Exercises/MakeFile'
+let g:netrw_dirhist_9='/home/lucas/.config/nvim'
+let g:netrw_dirhist_8='/home/lucas/Repositories/Coding-Exercises/MakeFile'
+let g:netrw_dirhist_7='/home/lucas/Repositories/nids-rule-learner/syrius'
+let g:netrw_dirhist_6='/home/lucas/.config/nvim'
