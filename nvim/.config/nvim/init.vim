@@ -29,7 +29,7 @@ autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
 "automatically closes the loclist window when the buffer is closed
 augroup CloseLoclistWindowGroup
     autocmd!
-    autocmd QuitPre * if empty(&buftype) | lclose | endif
+    autocmd QuitPre * if empty(&buftype) | lclose ; cclose | endif
 augroup END
 
 augroup VCenterCursor
