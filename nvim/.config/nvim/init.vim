@@ -25,11 +25,13 @@ set foldlevel=20
 "disable expandtab for make files
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
+autocmd VimEnter * Vexplore
 
-"automatically closes the loclist window when the buffer is closed
-augroup CloseLoclistWindowGroup
+"automatically closes loclist, quickfix and netrw windows when the buffer is closed
+augroup CloseWindowGroup
     autocmd!
-    autocmd QuitPre * if empty(&buftype) | lclose ; cclose | endif
+    autocmd QuitPre * if empty(&buftype) | lclose | cclose |  endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"| q |endif
 augroup END
 
 augroup VCenterCursor
