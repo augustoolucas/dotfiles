@@ -70,6 +70,7 @@ call plug#begin(stdpath('data'))
     Plug 'mhinz/vim-signify'                                    " shows git diff
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}      " python syntax highlighting
     Plug 'jiangmiao/auto-pairs'         " automatically closes pairs of brackets and parenthesis
+    Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 call plug#end()
 
@@ -80,6 +81,8 @@ augroup qs_colors
     highlight QuickScopeSecondary guifg='#00ffff' gui=underline ctermfg=81 cterm=underline
 augroup END
 
+colorscheme onedark                     " setting theme
+
 let g:go_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
@@ -89,10 +92,11 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 
 let g:python_highlight_all = 1
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
 let g:python3_host_prog = '/home/lucas/anaconda3/bin/python3'
-colorscheme onedark                     " setting theme
+
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
 let g:lightline = {'colorscheme': 'onedark'}
+
 let g:ale_linters = {
             \ 'python': ['flake8', 'pylint', 'pylama', 'pyflakes'], 
             \ 'go': ['gofmt', 'gometalinter', 'gopls'],
@@ -102,13 +106,18 @@ let g:ale_fixers = {'python': ['yapf']}
 let g:ale_open_list = 0
 let g:ale_set_quickfix = 1
 let g:ale_keep_list_window_open = 1
+
 let g:rainbow_active=1                  " enables rainbow plugin
+
 let g:SimpylFold_fold_import=0          " disables import folding
+
 let g:netrw_banner = 0                  " disables file explorer banner
 let g:netrw_liststyle = 3               " sets explorer style to tree
 let g:netrw_browse_split = 4            " opens files in previous window 
 let g:netrw_altv = 1                    " spliting to right
 let g:netrw_winsize = string(&columns * 0.07)                " sets file explorer window size
+
+let g:Hexokinase_highlighters = ['backgroundfull']
 
 " Disabling arrow keys and page up/down, home and end
 inoremap <Down> <Nop>
