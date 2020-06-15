@@ -25,13 +25,23 @@ set foldlevel=20
 "disable expandtab for make files
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
-autocmd VimEnter * Vexplore
 
 "automatically closes loclist, quickfix and netrw windows when the buffer is closed
 augroup CloseWindowGroup
     autocmd!
     autocmd QuitPre * if empty(&buftype) | lclose | cclose |  endif
-    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"| q |endif
+    autocmd WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), "&filetype") == "netrw"| qa |endif
+augroup END
+
+augroup Startup
+  autocmd!
+  autocmd VimEnter *
+              \ Vexplore |
+              \ execute "wincmd l" |
+              \ split |
+              \ execute "term zsh" |
+              \ execute "res". string(&lines * 0.15) |
+              \ execute "wincmd k"
 augroup END
 
 augroup VCenterCursor
@@ -97,7 +107,7 @@ let g:netrw_banner = 0                  "disables file explorer banner
 let g:netrw_liststyle = 3               "sets explorer style to tree
 let g:netrw_browse_split = 4            "opens files in previous window 
 let g:netrw_altv = 1                    "spliting to right
-let g:netrw_winsize = 25                "sets file explorer window size
+let g:netrw_winsize = string(&columns * 0.07)                "sets file explorer window size
 
 "Disabling arrow keys and page up/down home and end
 inoremap <Down> <Nop>
