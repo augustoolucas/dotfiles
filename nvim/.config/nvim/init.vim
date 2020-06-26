@@ -100,7 +100,17 @@ let g:python_highlight_all = 1
 let g:python3_host_prog = '/home/lucas/anaconda3/bin/python3'
 
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
-let g:lightline = {'colorscheme': 'onedark'}
+let g:lightline = {
+	\ 'colorscheme': 'onedark',
+	\ 'active': {
+	\   'left': [ [ 'mode', 'paste' ],
+	\             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]
+	\ },
+	\ 'component_function': {
+	\   'cocstatus': 'coc#status'
+	\ },
+	\ }
+
 
 let g:ale_linters = {
             \ 'python': ['flake8', 'pylint', 'pylama', 'pyflakes'], 
