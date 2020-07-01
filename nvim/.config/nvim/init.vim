@@ -76,6 +76,7 @@ call plug#begin(stdpath('data'))
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}      " python syntax highlighting
     Plug 'jiangmiao/auto-pairs'         " automatically closes pairs of brackets and parenthesis
     Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+    Plug 'vim-vdebug/vdebug'
 
 call plug#end()
 
@@ -113,7 +114,7 @@ let g:lightline = {
 
 
 let g:ale_linters = {
-            \ 'python': ['flake8', 'pylint', 'pylama', 'pyflakes'], 
+            \ 'python': ['pylint', 'pycodestyle', 'bandit'], 
             \ 'go': ['gofmt', 'gometalinter', 'gopls'],
             \ }
 let g:ale_fixers = {'python': ['yapf']}
