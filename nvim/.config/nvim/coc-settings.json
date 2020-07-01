@@ -1,2 +1,3 @@
 {"python.jediPath": "/home/lucas/.local/lib/python3.8/site-packages",
-"python.linting.pylintPath": "/home/lucas/.local/bin/pylint"}
+"python.linting.pylintPath": "/home/lucas/.local/bin/pylint",
+"python.linting.enabled": false}
