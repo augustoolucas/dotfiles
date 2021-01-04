@@ -21,6 +21,7 @@ set scrolloff=3         " sets the minimum number of lines above and below the c
 set colorcolumn=80      " sets a different colour for the 80th column
 set foldmethod=syntax
 set foldlevel=20
+set statusline^=%{coc#status()}
 
 " disable expandtab for make files
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
@@ -98,7 +99,8 @@ let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
 
 let g:python_highlight_all = 1
-let g:python3_host_prog = '/home/lucas/anaconda3/bin/python3'
+let g:python_host_prog = '/usr/bin/python2.7'
+let g:python3_host_prog = '/usr/bin/python3.8'
 
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
 let g:lightline = {
