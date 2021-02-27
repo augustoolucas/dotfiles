@@ -1,3 +1,4 @@
-{"python.jediPath":"/home/lucas/.local/bin/jedi-language-server",
+{"jedi.enable": true,
+//"python.jediPath":"/home/lucas/.local/bin/jedi-language-server",
 "python.linting.pylintPath": "/home/lucas/.local/bin/pylint",
 "python.linting.enabled": false}

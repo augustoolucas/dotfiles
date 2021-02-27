@@ -73,11 +73,13 @@ call plug#begin(stdpath('data'))
     Plug 'psliwka/vim-smoothie'         " smoother scroll
     Plug 'mhinz/vim-startify'           " start page
     Plug 'neoclide/coc.nvim', {'branch': 'release'}             " autocompletion
+    " Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build' }
     Plug 'mhinz/vim-signify'                                    " shows git diff
     Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}      " python syntax highlighting
     Plug 'jiangmiao/auto-pairs'         " automatically closes pairs of brackets and parenthesis
     Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
     Plug 'vim-vdebug/vdebug'
+    Plug 'JuliaEditorSupport/julia-vim'
 
 call plug#end()
 
@@ -100,7 +102,7 @@ let g:go_highlight_build_constraints = 1
 
 let g:python_highlight_all = 1
 let g:python_host_prog = '/usr/bin/python2.7'
-let g:python3_host_prog = '/usr/bin/python3.8'
+let g:python3_host_prog = '/home/lucas/anaconda3/envs/lsm/bin/python'
 
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
 let g:lightline = {

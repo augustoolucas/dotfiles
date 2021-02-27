@@ -4,6 +4,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/lucas/.oh-my-zsh"
 export PATH=$PATH:/home/lucas/.local/bin:/usr/local/go/bin
+export PATH=$PATH:/opt/julia/julia-1.5.3/bin
 export DEFAULT_USER="$(whoami)"
 export SPOTIPY_CLIENT_ID=2a9510d0951d40589b7bc17df2cfaddb
 export SPOTIPY_CLIENT_SECRET=9764f849cb59484eb62afccec531ff94
