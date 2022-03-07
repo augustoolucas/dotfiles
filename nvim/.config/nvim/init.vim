@@ -16,12 +16,13 @@ set inccommand=split    " shows the effect of a command incrementally, while typ
 set hidden              " allows to have unwritten buffers invisible
 set splitright          " new vertical splits goes to right of the current one
 set splitbelow          " new horizontal splits goes to below of the current one
-set clipboard=unnamed   " syncronizes nvim and system's clipboard
+set clipboard=unnamedplus   " syncronizes nvim and system's clipboard
 set scrolloff=3         " sets the minimum number of lines above and below the cursor
 set colorcolumn=80      " sets a different colour for the 80th column
 set foldmethod=syntax
 set foldlevel=20
 set statusline^=%{coc#status()}
+set noequalalways
 
 " disable expandtab for make files
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
@@ -43,6 +44,7 @@ augroup Startup
 
   autocmd VimEnter *
               \ Vexplore |
+              \ execute "vertical res" . string(&columns * 0.125) |
               \ execute "wincmd l" |
               \ split |
               \ execute "term zsh" |
@@ -102,7 +104,7 @@ let g:go_highlight_build_constraints = 1
 
 let g:python_highlight_all = 1
 let g:python_host_prog = '/usr/bin/python2.7'
-let g:python3_host_prog = '/home/lucas/anaconda3/envs/lsm/bin/python'
+let g:python3_host_prog = '/home/lucas-a-alcantara/miniconda3/envs/cl/bin/python3'
 
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']       " setting quickscope trigger keys
 let g:lightline = {
@@ -169,6 +171,14 @@ vnoremap <PageDown> <Nop>
 vnoremap <PageUp> <Nop>
 vnoremap <Home> <Nop>
 vnoremap <End> <Nop>
+
+" Mappings to move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Use Escape to exit insert mode in :term
 tnoremap <ESC> <C-\><C-n>

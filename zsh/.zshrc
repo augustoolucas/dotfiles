@@ -2,18 +2,23 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/lucas/.oh-my-zsh"
-export PATH=$PATH:/home/lucas/.local/bin:/usr/local/go/bin
-export PATH=$PATH:/opt/julia/julia-1.5.3/bin
+export NVM_DIR="$HOME/.nvm"
+export ZSH="$HOME/.oh-my-zsh"
 export DEFAULT_USER="$(whoami)"
-export SPOTIPY_CLIENT_ID=2a9510d0951d40589b7bc17df2cfaddb
-export SPOTIPY_CLIENT_SECRET=9764f849cb59484eb62afccec531ff94
-export SPOTIPY_REDIRECT_URI=http://localhost:8080
+#export PATH=$PATH:/usr/local/go/bin
+export PATH=/usr/local/lib/nodejs/node-v14.16.1-linux-x64/bin:$PATH
+export PATH=/usr/local/cuda-11.4/bin${PATH:+:${PATH}}
+export OMP_NUM_THREADS=20
+export OMPI_MCA_opal_cuda_support=true
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
+DISABLE_LS_COLORS="true"
+
+#ZSH_THEME="robbyrussell"
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -72,7 +77,8 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git)
+# zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 # source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # User configuration
@@ -102,21 +108,23 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Install Ruby Gems to ~/gems
 alias bat="batcat"
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
+alias nvim="nvim.appimage"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/lucas/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+__conda_setup="$('$HOME/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/lucas/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/lucas/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/miniconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/lucas/anaconda3/bin:$PATH"
+        export PATH="$HOME/miniconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+export NVM_DIR="/home/lucas-a-alcantara/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
